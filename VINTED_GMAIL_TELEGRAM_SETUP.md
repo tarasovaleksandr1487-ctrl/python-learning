@@ -26,14 +26,14 @@ Optional:
 ```sh
 export VINTED_FROM_QUERY="vinted"
 export VINTED_SOLD_KEYWORDS="sold,has sold,just sold,item sold,sprzedane,sprzedała,sprzedałeś,kupiono"
-export STATE_FILE="/Users/alex/Desktop/python/.vinted_gmail_telegram_state.json"
+export STATE_FILE="/Users/alex/Projects/python-learning/.vinted_gmail_telegram_state.json"
 export MAX_EMAILS="20"
 ```
 
 ## 3. Run it once
 
 ```sh
-python3 /Users/alex/Desktop/python/vinted_gmail_telegram.py
+python3 /Users/alex/Projects/python-learning/vinted_gmail_telegram.py
 ```
 
 ## 4. Run it every 5 minutes on macOS cron
@@ -49,15 +49,15 @@ umask 077
   printf 'export GMAIL_APP_PASSWORD=%q\n' "$GMAIL_APP_PASSWORD"
   printf 'export VINTED_FROM_QUERY=%q\n' "${VINTED_FROM_QUERY:-vinted}"
   printf 'export VINTED_SOLD_KEYWORDS=%q\n' "${VINTED_SOLD_KEYWORDS:-sold,has sold,just sold,item sold,sprzedane,sprzedała,sprzedałeś,kupiono}"
-  printf 'export STATE_FILE=%q\n' "${STATE_FILE:-/Users/alex/Desktop/python/.vinted_gmail_telegram_state.json}"
+  printf 'export STATE_FILE=%q\n' "${STATE_FILE:-/Users/alex/Projects/python-learning/.vinted_gmail_telegram_state.json}"
   printf 'export MAX_EMAILS=%q\n' "${MAX_EMAILS:-20}"
-} > /Users/alex/Desktop/python/vinted_gmail_telegram.env
+} > /Users/alex/Projects/python-learning/vinted_gmail_telegram.env
 ```
 
 Install the cron job:
 
 ```sh
-CRON_LINE="*/5 * * * * /bin/zsh -lc 'source /Users/alex/Desktop/python/vinted_gmail_telegram.env && cd /Users/alex/Desktop/python && /usr/bin/python3 /Users/alex/Desktop/python/vinted_gmail_telegram.py >> /Users/alex/Desktop/python/vinted_gmail_telegram.log 2>&1'"
+CRON_LINE="*/5 * * * * /bin/zsh -lc 'source /Users/alex/Projects/python-learning/vinted_gmail_telegram.env && cd /Users/alex/Projects/python-learning && /usr/bin/python3 /Users/alex/Projects/python-learning/vinted_gmail_telegram.py >> /Users/alex/Projects/python-learning/vinted_gmail_telegram.log 2>&1'"
 (crontab -l 2>/dev/null | grep -v 'vinted_gmail_telegram.py'; echo "$CRON_LINE") | crontab -
 ```
 
@@ -70,7 +70,7 @@ crontab -l
 Watch the log after a few minutes:
 
 ```sh
-tail -f /Users/alex/Desktop/python/vinted_gmail_telegram.log
+tail -f /Users/alex/Projects/python-learning/vinted_gmail_telegram.log
 ```
 
 Remove the cron job:

@@ -7,10 +7,10 @@ Default source database:
     ~/Library/Messages/chat.db
 
 Default copied database:
-    /Users/alex/Desktop/rent_sms_analysis/chat.db
+    /Users/alex/Projects/rent_sms_analysis/chat.db
 
 Default workbook output:
-    /Users/alex/Desktop/rent_sms_analysis/rent_utilities_v4.xlsx
+    /Users/alex/Projects/rent_sms_analysis/rent_utilities_v4.xlsx
 
 Usage:
     python3 rent_sms_analyzer.py --list-senders
@@ -54,7 +54,7 @@ from xml.sax.saxutils import escape
 
 
 DEFAULT_SOURCE_DB = "~/Library/Messages/chat.db"
-DEFAULT_ANALYSIS_DIR = "/Users/alex/Desktop/rent_sms_analysis"
+DEFAULT_ANALYSIS_DIR = "/Users/alex/Projects/rent_sms_analysis"
 DEFAULT_OUTPUT_NAME = "rent_utilities_v4.xlsx"
 DEFAULT_SENDER = "+48 500265786"
 DEFAULT_ATTACHMENTS_DIR_NAME = "attachments"
