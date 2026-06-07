@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.vinted_gmail_telegram_state.json
+vinted_gmail_telegram.env
+vinted_gmail_telegram.log
+
+*.xlsx
+*.db
+*.db-shm
+*.db-wal
+rent_sms_analysis/
+attachments/
